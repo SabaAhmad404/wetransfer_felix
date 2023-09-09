@@ -9,12 +9,12 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-     
+
       <Routes>
-      <Route exact path="/" Component={Logo}/>
+        <Route exact path="/" Component={Logo} />
       </Routes>
-      <PlayVideo/>
-      <TextImages/>
+      <PlayVideo />
+      <TextImages />
       <CountdownTimer />
     </div>
   );
