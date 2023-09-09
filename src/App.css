@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+body {
+  background-image: url('components/images/image1.jpg'), url('components/images/image2.jpg'), url('components/images/image3.jpg'), url('components/images/image4.jpg'), url('components/images/image5.jpg'), url('components/images/image6.jpg'), url('components/images/image7.jpg'), url('components/images/image8.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  height: 17rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo {
   display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-container {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.count-down {
+  color: white;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+}
+
+/* imagestext start from here */
+.image-gallery {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  gap: 2rem;
+}
+
+.share-page {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.share-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.share-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1.3rem;
 }
