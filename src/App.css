@@ -44,3 +44,20 @@ img {
   align-items: center;
   gap: 2rem;
 }
+
+.share-page {
+  color: white;
+}
+
+.share-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1.3rem;
+}

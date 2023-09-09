@@ -4,6 +4,8 @@ import Logo from './components/Logo';
 import PlayVideo from './components/PlayVideo';
 import TextImages from './components/TextImages';
 import CountdownTimer from './components/CountdownTimer';
+import ShareButton from './components/ShareButton';
+
 import './App.css';
 
 function App() {
@@ -11,11 +13,13 @@ function App() {
     <div className="App">
 
       <Routes>
-        <Route exact path="/" Component={Logo} />
+        <Route path="/" Component={Logo} />
       </Routes>
       <PlayVideo />
       <TextImages />
       <CountdownTimer />
+      <ShareButton />
+
     </div>
   );
 }
