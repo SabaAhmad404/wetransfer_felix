@@ -3,9 +3,7 @@ import React, { useState, useEffect } from 'react';
 const targetDate = new Date('2023-12-31T23:59:59').getTime(); // Replace with your target date
 
 function CountdownTimer() {
-  // eslint-disable-next-line no-use-before-define
-  const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
-
+  // Define calculateTimeRemaining function
   function calculateTimeRemaining() {
     const now = new Date().getTime();
     const difference = targetDate - now;
@@ -31,6 +29,8 @@ function CountdownTimer() {
     };
   }
 
+  const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
+
   useEffect(() => {
     const interval = setInterval(() => {
       const remaining = calculateTimeRemaining();
@@ -46,29 +46,34 @@ function CountdownTimer() {
     };
   }, []);
 
+  // Function to add leading zeros to numbers
+  function addLeadingZero(num) {
+    return num < 10 ? `0${num}` : num;
+  }
+
   return (
     <div className="count-down">
-      <h1>Countdown Timer</h1>
+      <h1 className="timer-name">Countdown Timer</h1>
       <div className="timer-container">
         <div className="days">
-          <h2>Days:</h2>
-          <span>{timeRemaining.days}</span>
+          <h2>Days</h2>
+          <span className="time-remain">{addLeadingZero(timeRemaining.days)}</span>
         </div>
         <div className="days">
           <h2>Hours</h2>
-          <span>
-            {timeRemaining.hours}
+          <span className="time-remain">
+            {addLeadingZero(timeRemaining.hours)}
             {' '}
           </span>
         </div>
         <div className="days">
           <h2>Minutes</h2>
-          <span>{timeRemaining.minutes}</span>
+          <span className="time-remain">{addLeadingZero(timeRemaining.minutes)}</span>
         </div>
         <div className="days">
           <h2>Seconds </h2>
-          <span>
-            {timeRemaining.seconds}
+          <span className="time-remain">
+            {addLeadingZero(timeRemaining.seconds)}
             {' '}
           </span>
         </div>

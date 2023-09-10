@@ -40,8 +40,8 @@ export default function PlayVideo() {
     <>
       <div className="autoplay-container">
 
-        <video ref={videoRef} autoPlay loop>
-          <source id="video" src="/video.mp4" type="video/mp4" />
+        <video className="video" ref={videoRef} autoPlay loop style={{ width: '400px', height: '300px' }}>
+          <source src="/video.mp4" type="video/mp4" />
           <track src="/captions.vtt" kind="captions" srcLang="en" label="English" default />
         </video>
         <audio ref={audioRef} autoPlay loop>
