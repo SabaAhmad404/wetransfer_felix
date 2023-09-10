@@ -64,8 +64,8 @@ export default function ContactForm() {
         <span
           className="contact-icon"
           onClick={() => openContactForm()}
-          tabIndex="0" // Add tabIndex to make it focusable
-          role="button" // Add role for semantic meaning
+          tabIndex="0"
+          role="button"
           onKeyPress={(e) => {
             if (e.key === 'Enter') {
               openContactForm();
@@ -76,13 +76,35 @@ export default function ContactForm() {
           <FontAwesomeIcon icon={faAddressCard} size="2xl" />
         </span>
         {isOpen && (
-          <div className="contact-popup">
+        <div
+          className="contact-overlay"
+          onClick={closeContactForm}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              closeContactForm();
+            }
+          }}
+          role="button"
+          tabIndex="0"
+        >
+
+          <div
+            className="contact-popup"
+            onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.stopPropagation();
+              }
+            }}
+            role="button"
+            tabIndex="0"
+          >
             <div className="cross-icon">
               <span
                 className="cross-button"
                 onClick={closeContactForm}
-                tabIndex="0" // Add tabIndex to make it focusable
-                role="button" // Add role for semantic meaning
+                tabIndex="0"
+                role="button"
                 onKeyPress={(e) => {
                   if (e.key === 'Enter') {
                     closeContactForm();
@@ -133,6 +155,7 @@ export default function ContactForm() {
               {errorMessage && <p className="error-message">{errorMessage}</p>}
             </div>
           </div>
+        </div>
         )}
       </div>
     </>
