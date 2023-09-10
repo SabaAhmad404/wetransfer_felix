@@ -53,7 +53,8 @@ img {
   flex-wrap: wrap;
   gap: 1.6rem;
 }
-.image-text1{
+
+.image-text1 {
   height: auto;
   width: 60vw;
 }
@@ -163,21 +164,20 @@ img {
   color: white;
   font-size: large;
 }
+
 .contact-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px); /* Apply a blur effect to the background */
   z-index: 1000; /* Ensure the overlay is above other content */
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
 
 @media (max-width: 768px) {
   body {
@@ -187,10 +187,12 @@ img {
     width: 100vw;
     height: 100vh;
   }
-  .image-text1{
+
+  .image-text1 {
     height: auto;
     width: 70vw;
   }
+
   .timer-name {
     font-size: 1.6rem;
   }
@@ -210,11 +212,13 @@ img {
   .contact-popup {
     width: 260px;
   }
+
   .input {
     height: 1.5rem;
     width: 15rem;
   }
-  .contact-overlay{
+
+  .contact-overlay {
     height: 100%;
     width: 100%;
   }
