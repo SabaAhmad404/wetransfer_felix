@@ -5,6 +5,7 @@ import PlayVideo from './components/PlayVideo';
 import TextImages from './components/TextImages';
 import CountdownTimer from './components/CountdownTimer';
 import ShareButton from './components/ShareButton';
+import ContactForm from './components/ContactForm';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
       <TextImages />
       <CountdownTimer />
       <ShareButton />
+      <ContactForm />
 
     </div>
   );

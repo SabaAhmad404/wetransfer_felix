@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 const targetDate = new Date('2023-12-31T23:59:59').getTime(); // Replace with your target date
 
 function CountdownTimer() {
-  // Define calculateTimeRemaining function
   function calculateTimeRemaining() {
     const now = new Date().getTime();
     const difference = targetDate - now;

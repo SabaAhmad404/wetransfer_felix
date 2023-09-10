@@ -1,0 +1,140 @@
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+
+export default function ContactForm() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    serverUrl: 'https://eo6kofaq755leya.m.pipedream.net', // Set the default server URL
+  });
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const openContactForm = () => {
+    setIsOpen(true);
+  };
+
+  const closeContactForm = () => {
+    setIsOpen(false);
+    setSuccessMessage('');
+    setErrorMessage('');
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(formData.serverUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+        }),
+      });
+
+      if (response.ok) {
+        setSuccessMessage('Form data sent successfully');
+        setErrorMessage('');
+      } else {
+        setErrorMessage('Error sending form data');
+        setSuccessMessage('');
+      }
+    } catch (error) {
+      setErrorMessage('Network error or unexpected error occurred');
+      setSuccessMessage('');
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  return (
+    <>
+      <div className="contact-container">
+        <span
+          className="contact-icon"
+          onClick={() => openContactForm()}
+          tabIndex="0" // Add tabIndex to make it focusable
+          role="button" // Add role for semantic meaning
+          onKeyPress={(e) => {
+            if (e.key === 'Enter') {
+              openContactForm();
+            }
+          }}
+        >
+          Contact Us
+          <FontAwesomeIcon icon={faAddressCard} size="2xl" />
+        </span>
+        {isOpen && (
+          <div className="contact-popup">
+            <div className="cross-icon">
+              <span
+                className="cross-button"
+                onClick={closeContactForm}
+                tabIndex="0" // Add tabIndex to make it focusable
+                role="button" // Add role for semantic meaning
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') {
+                    closeContactForm();
+                  }
+                }}
+              >
+                <FontAwesomeIcon icon={faTimes} />
+              </span>
+            </div>
+            <div className="contact-form">
+              <h2 className="heading">Contact Form</h2>
+              <form className="form-inputs" method="post" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  className="input"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="User Name"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="input"
+                  placeholder="Enter Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="text"
+                  name="serverUrl"
+                  id="serverUrl"
+                  className="input"
+                  placeholder="Enter Server URL"
+                  value={formData.serverUrl}
+                  onChange={handleChange}
+                  required
+                />
+                <button className="submit-button" type="submit">
+                  Submit
+                </button>
+              </form>
+              {successMessage && <p className="success-message">{successMessage}</p>}
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
+}
