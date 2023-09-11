@@ -6,6 +6,7 @@ import TextImages from './components/TextImages';
 import CountdownTimer from './components/CountdownTimer';
 import ShareButton from './components/ShareButton';
 import ContactForm from './components/ContactForm';
+import ButtonPopup from './components/ButtonPopup';
 
 import './App.css';
 
@@ -18,9 +19,11 @@ function App() {
       </Routes>
       <PlayVideo />
       <TextImages />
+      <ButtonPopup />
       <CountdownTimer />
       <ShareButton />
       <ContactForm />
+
 
     </div>
   );

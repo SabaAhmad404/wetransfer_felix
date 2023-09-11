@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default function ContactForm() {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,7 +73,6 @@ export default function ContactForm() {
           }}
         >
           Contact Us
-          <FontAwesomeIcon icon={faAddressCard} size="2xl" />
         </span>
         {isOpen && (
         <div

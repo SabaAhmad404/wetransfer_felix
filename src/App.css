@@ -42,6 +42,7 @@ img {
 .days {
   display: flex;
   flex-direction: column;
+  color: blue;
 }
 
 /* imagestext start from here */
@@ -73,6 +74,13 @@ img {
 
 .time-remain {
   margin-left: 10px;
+  border: 2px solid blue;
+  width: 1.7rem;
+  color: white;
+}
+
+.timer-name {
+  color: rgb(32, 32, 218);
 }
 
 .share-links {
@@ -138,9 +146,9 @@ img {
 }
 
 .contact-icon {
-  color: white;
-  font-size: 2rem;
-  font-weight: 600;
+  color: rgb(56, 73, 170);
+  font-size: 2.4rem;
+  font-weight: 800;
   margin-bottom: 1rem;
 }
 
@@ -179,6 +187,42 @@ img {
   align-items: center;
 }
 
+/* button popups start from here */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.button-names {
+  height: 2rem;
+  width: 16rem;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(16, 16, 204);
+}
+
+.popup-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); /* Apply a blur effect to the background */
+  z-index: 1000; /* Ensure the overlay is above other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
 @media (max-width: 768px) {
   body {
     background-image: url('components/images/image4.jpg');
@@ -195,6 +239,7 @@ img {
 
   .timer-name {
     font-size: 1.6rem;
+    color: rgb(32, 32, 218);
   }
 
   .timer-container {
@@ -221,5 +266,17 @@ img {
   .contact-overlay {
     height: 100%;
     width: 100%;
+  }
+
+  .popup-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button-names {
+    width: 13rem;
   }
 }

@@ -58,6 +58,7 @@ function CountdownTimer() {
           <h2>Days</h2>
           <span className="time-remain">{addLeadingZero(timeRemaining.days)}</span>
         </div>
+        :
         <div className="days">
           <h2>Hours</h2>
           <span className="time-remain">
