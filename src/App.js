@@ -24,7 +24,6 @@ function App() {
       <ShareButton />
       <ContactForm />
 
-
     </div>
   );
 }
