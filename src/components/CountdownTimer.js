@@ -63,7 +63,6 @@ function CountdownTimer() {
           <h2>Hours</h2>
           <span className="time-remain">
             {addLeadingZero(timeRemaining.hours)}
-            {' '}
           </span>
         </div>
         <div className="days">
