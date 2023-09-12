@@ -72,6 +72,7 @@ const ButtonPopup = () => {
               >
                 &#x2716;
               </span>
+              <div className='diff-container'>
               {capturedImage ? (
                 <div className="image-container">
                   <img src={capturedImage} alt="Captured" />
@@ -102,13 +103,18 @@ const ButtonPopup = () => {
                   value={formData.lastName}
                   onChange={handleChange}
                 />
-                <input
+                <button className='capture'>y</button>
+              </div>
+              <div className='email-container'>
+              <input
                   type="email"
                   name="email"
                   placeholder="Email"
                   value={formData.email}
                   onChange={handleChange}
                 />
+                 <button className='capture'>y</button>
+              </div>
               </div>
             </div>
           </div>

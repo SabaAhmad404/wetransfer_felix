@@ -267,6 +267,21 @@ input {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+.diff-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.email-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
 
 @media (max-width: 768px) {
   body {
@@ -309,7 +324,7 @@ input {
   }
 
   .webcam {
-    height: 12rem;
+    height: 10rem;
   }
 
   .contact-overlay {
@@ -327,5 +342,9 @@ input {
 
   .button-names {
     width: 13rem;
+  }
+  .diff-container{
+    display: flex;
+    flex-direction: column;
   }
 }
