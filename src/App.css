@@ -267,21 +267,22 @@ input {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-.diff-container{
+
+.diff-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 2rem;
 }
-.email-container{
+
+.email-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 8px;
 }
-
 
 @media (max-width: 768px) {
   body {
@@ -343,7 +344,8 @@ input {
   .button-names {
     width: 13rem;
   }
-  .diff-container{
+
+  .diff-container {
     display: flex;
     flex-direction: column;
   }
