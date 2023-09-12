@@ -72,43 +72,49 @@ const ButtonPopup = () => {
               >
                 &#x2716;
               </span>
-              {capturedImage ? (
-                <div className="image-container">
-                  <img src={capturedImage} alt="Captured" />
-                </div>
-              ) : (
-                <div className="webcam-container">
-                  <Webcam
-                    className="webcam"
-                    audio={false}
-                    ref={webcamRef}
-                    screenshotFormat="image/jpeg"
+              <div className="diff-container">
+                {capturedImage ? (
+                  <div className="image-container">
+                    <img src={capturedImage} alt="Captured" />
+                  </div>
+                ) : (
+                  <div className="webcam-container">
+                    <Webcam
+                      className="webcam"
+                      audio={false}
+                      ref={webcamRef}
+                      screenshotFormat="image/jpeg"
+                    />
+                    <button type="button" className="capture" onClick={captureImage}>Y</button>
+                  </div>
+                )}
+                <div className="input-container">
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={formData.firstName}
+                    onChange={handleChange}
                   />
-                  <button type="button" className="capture" onClick={captureImage}>Y</button>
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                  />
+                  <button type="button" className="capture">y</button>
                 </div>
-              )}
-              <div className="input-container">
-                <input
-                  type="text"
-                  name="firstName"
-                  placeholder="First Name"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  name="lastName"
-                  placeholder="Last Name"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
+                <div className="email-container">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                  <button type="button" className="capture">y</button>
+                </div>
               </div>
             </div>
           </div>
