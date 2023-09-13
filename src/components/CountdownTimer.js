@@ -56,24 +56,37 @@ function CountdownTimer() {
       <div className="timer-container">
         <div className="days">
           <h2>Days</h2>
-          <span className="time-remain">{addLeadingZero(timeRemaining.days)}</span>
+          <div className="colon">
+            <span className="time-remain">{addLeadingZero(timeRemaining.days)}</span>
+            <span className="span-colon">:</span>
+          </div>
         </div>
         <div className="days">
           <h2>Hours</h2>
-          <span className="time-remain">
-            {addLeadingZero(timeRemaining.hours)}
-          </span>
+          <div className="colon">
+            <span className="time-remain">
+              {addLeadingZero(timeRemaining.hours)}
+            </span>
+            <span className="span-colon">:</span>
+          </div>
         </div>
         <div className="days">
           <h2>Minutes</h2>
-          <span className="time-remain">{addLeadingZero(timeRemaining.minutes)}</span>
+          <div className="colon">
+            <span className="time-remain">{addLeadingZero(timeRemaining.minutes)}</span>
+            <span className="span-colon">:</span>
+          </div>
         </div>
         <div className="days">
           <h2>Seconds </h2>
-          <span className="time-remain">
-            {addLeadingZero(timeRemaining.seconds)}
+          <div className="colon">
             {' '}
-          </span>
+            <span className="time-remain">
+              {addLeadingZero(timeRemaining.seconds)}
+              {' '}
+            </span>
+          </div>
+
         </div>
       </div>
     </div>

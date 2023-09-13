@@ -117,16 +117,6 @@ export default function ContactForm() {
               <h2 className="heading">Contact Form</h2>
               <form className="form-inputs" method="post" onSubmit={handleSubmit}>
                 <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  className="input"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="User Name"
-                />
-                <input
                   type="email"
                   name="email"
                   id="email"
@@ -135,6 +125,18 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                />
+                <textarea
+                  rows={4}
+                  cols={30}
+                  id="name"
+                  name="name"
+                  className="input-area"
+                  value={formData.name}
+                  maxLength={800}
+                  onChange={handleChange}
+                  required
+                  placeholder="Type something"
                 />
                 <input
                   type="text"
