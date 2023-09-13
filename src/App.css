@@ -1,11 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Pacifico&display=swap');
 
-
 body {
-  font-family: 'League Gothic';
-  background-image: url('components/images/background2.svg');
+  font-family: 'League Gothic', sans-serif;
+  background-image: url('components/images/image3.jpg');
   background-size: cover;
+
   /* background-repeat: repeat; */
   width: 100vw;
   height: 100vh;
@@ -129,6 +129,7 @@ img {
 
 .contact-popup {
   background-image: url('components/images/background2.svg');
+
   /* border-top-left-radius: 20px;
   border-bottom-right-radius: 20px; */
   border-radius: 20px;
@@ -236,7 +237,7 @@ img {
 .popup-content {
   position: fixed;
   background-image: url("./components/images/FBX.png");
-  background-repeat: repeat;
+  background-size: 200px 100px;
   top: 0;
   left: 0;
   width: 100vw;
@@ -251,10 +252,7 @@ img {
   gap: 2rem;
 }
 
-.sharepopup-content{
-  /* position: fixed; */
-  /* top: 0;
-  left: 0; */
+.sharepopup-content {
   width: 28vw;
   height: 40vh;
   color: white;
@@ -268,38 +266,40 @@ img {
   align-items: center;
 }
 
-.social-media{
+.social-media {
   display: flex;
   flex-direction: column;
- gap: 13px; 
+  gap: 13px;
 }
-.section-1{
+
+.section-1 {
   display: flex;
   gap: 1.4rem;
 }
+
 .container-icone {
- display: flex;
- justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.popup-close-icon { 
-   color: rgb(247, 194, 51);
-   font-size: 24px;
-   cursor: pointer;
-   z-index: 9999;
+.popup-close-icon {
+  color: rgb(247, 194, 51);
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
 }
+
 /* .youtube{
   height: 1rem;
   width: 2rem;
 } */
 .circular-image {
   width: 36px; /* Set to the width of your icon */
-  height: 36px; 
+  height: 36px;
 }
 
 .share-social-icone {
   height: 4.1rem;
-
 }
 
 
@@ -315,9 +315,8 @@ img {
   z-index: 9999;
 }
 
-
 .webcam {
-  height: 15rem;
+  height: 9rem;
 }
 
 .webcam-container {
@@ -326,30 +325,63 @@ img {
   gap: 1rem;
 }
 
-.capture {
-  color: white;
-  background-color: blue;
+.webcam-img {
+  height: 9rem;
+}
+
+/* .capture {
   width: 5rem;
-  height: 1.2rem;
-  border-radius: 4%;
-  border: none;
+} */
+
+.input-main {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  background-color: white;
+  transform: rotate(45deg);
+  overflow: hidden; /* Clip the rotated content */
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  transform: rotate(-45deg); /* Counter-rotate to make the inputs straight */
+  width: 100%;
+}
+
+.input-container input {
+  /* Adjust the width as needed */
+  width: 4rem;
+  margin-top: 3rem;
+  padding: 5px;
+  border: 1px solid #1329f0;
+  border-radius: 5px;
+  text-align: center;
+
+  /* transform: rotate(45deg);  */
+}
+
+.any {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.input-container {
-  background-image: url("./components/images/FBX.png");
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-input {
+.input-container .webcam {
+  width: 40%; /* Adjust the width as needed */
   margin: 5px;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 5px;
+  border: 1px solid #1329f0;
   border-radius: 5px;
+  text-align: center;
+
+  /* transform: rotate(45deg);  */
 }
 
 .colon {
@@ -371,7 +403,7 @@ input {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 10rem;
 }
 
 .email-container {
@@ -386,11 +418,13 @@ input {
   body {
     background-image: url('components/images/background1.svg');
     background-size: cover;
+
     /* background-repeat: repeat; */
     width: 100vw;
     max-height: 100%;
   }
-  .sharepopup-content{
+
+  .sharepopup-content {
     width: 70vw;
   }
 
