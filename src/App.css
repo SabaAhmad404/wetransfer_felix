@@ -5,9 +5,9 @@ body {
   font-family: 'League Gothic', sans-serif;
   background-image: url('components/images/image3.jpg');
   background-size: cover;
-
+  letter-spacing: 0.4ch;
   /* background-repeat: repeat; */
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -26,6 +26,10 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.logo-imge {
+  border: none;
 }
 
 .autoplay-container {
@@ -74,6 +78,7 @@ img {
 .image-text1 {
   height: auto;
   width: 95vw;
+  border: none;
 }
 
 .share-page {
@@ -175,15 +180,15 @@ img {
 }
 
 .input {
-  height: 1.1rem;
-  width: 17rem;
+  width: 90%;
+  padding: 7px 10px;
   border: none;
   border-radius: 3rem;
 }
 
 .input-area {
   border: none;
-  width: 18vw;
+  width: 90%;
   padding: 2vh 1vw;
   border-radius: 1rem;
 }
@@ -199,7 +204,8 @@ img {
 
 .heading {
   color: white;
-  font-size: large;
+  font-size: 22px;
+  letter-spacing: 0.5ch;
 }
 
 .contact-overlay {
@@ -233,7 +239,7 @@ img {
   font-size: 2vw;
   font-weight: bold;
   border: none;
-  border-bottom: 2px solid rgb(16, 16, 204);
+  text-decoration: underline;
   padding-left: 0;
   padding-right: 0;
   margin-bottom: 2vh;
@@ -241,9 +247,19 @@ img {
   color: rgb(16, 16, 204);
 }
 
+.button-names img {
+  height: 4vh;
+  width: 5vw;
+  margin-top: 3vh;
+  opacity: inherit;
+  border: none;
+}
+
 .popup-content {
   position: fixed;
   background-image: url("./components/images/FBX.png");
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: 200px 100px;
   top: 0;
   left: 0;
@@ -264,8 +280,8 @@ img {
 
   /* top: 0;
   left: 0; */
-  width: 28vw;
-  height: 40vh;
+  width: 30vw;
+  height: 45vh;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
@@ -307,10 +323,12 @@ img {
 .circular-image {
   width: 36px; /* Set to the width of your icon */
   height: 36px;
+  border: none;
 }
 
 .share-social-icone {
   height: 4.1rem;
+  width: 8vw;
 }
 
 /* webcapturing start here */
@@ -468,8 +486,7 @@ img {
   }
 
   .input {
-    height: 1.1rem;
-    width: 11rem;
+    width: 90%;
   }
 
   .webcam {

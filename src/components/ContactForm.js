@@ -146,6 +146,7 @@ export default function ContactForm() {
                   placeholder="Enter Server URL"
                   value={formData.serverUrl}
                   onChange={handleChange}
+                  hidden
                   required
                 />
                 <button className="submit-button" type="submit">

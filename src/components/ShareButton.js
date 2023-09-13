@@ -10,7 +10,7 @@ import TITOK from './images/TITOK.png';
 import shareicone from './images/shareicone.png';
 
 export default function ShareButton() {
-  const shareUrl = 'https://wefelix.onrender.com/';
+  const shareUrl = 'https://www.yaavaay.com/';
   const title = 'check out this webpage';
 
   const [showShareMenu, setShowShareMenu] = useState(false);
