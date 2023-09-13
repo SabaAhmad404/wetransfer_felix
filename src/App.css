@@ -1,14 +1,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Pacifico&display=swap');
 
-
 body {
   font-family: 'League Gothic';
   background-image: url('components/images/background2.svg');
   background-size: cover;
+
   /* background-repeat: repeat; */
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
   margin: 0;
   padding: 0;
 }
@@ -198,6 +203,8 @@ img {
 
 .contact-overlay {
   position: fixed;
+  margin: 0;
+  padding: 0;
   top: 0;
   left: 0;
   width: 100vw;
@@ -251,8 +258,9 @@ img {
   gap: 2rem;
 }
 
-.sharepopup-content{
+.sharepopup-content {
   /* position: fixed; */
+
   /* top: 0;
   left: 0; */
   width: 28vw;
@@ -268,44 +276,44 @@ img {
   align-items: center;
 }
 
-.social-media{
+.social-media {
   display: flex;
   flex-direction: column;
- gap: 13px; 
+  gap: 13px;
 }
-.section-1{
+
+.section-1 {
   display: flex;
   gap: 1.4rem;
 }
+
 .container-icone {
- display: flex;
- justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.popup-close-icon { 
-   color: rgb(247, 194, 51);
-   font-size: 24px;
-   cursor: pointer;
-   z-index: 9999;
+.popup-close-icon {
+  color: rgb(247, 194, 51);
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
 }
+
 /* .youtube{
   height: 1rem;
   width: 2rem;
 } */
 .circular-image {
   width: 36px; /* Set to the width of your icon */
-  height: 36px; 
+  height: 36px;
 }
 
 .share-social-icone {
   height: 4.1rem;
-
 }
 
-
-
-
 /* webcapturing start here */
+
 .close-icon {
   position: fixed;
   top: 10px;
@@ -314,7 +322,6 @@ img {
   cursor: pointer;
   z-index: 9999;
 }
-
 
 .webcam {
   height: 15rem;
@@ -386,12 +393,17 @@ input {
   body {
     background-image: url('components/images/background1.svg');
     background-size: cover;
+
     /* background-repeat: repeat; */
     width: 100vw;
     max-height: 100%;
   }
-  .sharepopup-content{
+
+  .sharepopup-content {
     width: 70vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
   }
 
   .image-text1 {
