@@ -8,6 +8,7 @@ import ShareButton from './components/ShareButton';
 import ContactForm from './components/ContactForm';
 import ButtonPopup from './components/ButtonPopup';
 import './App.css';
+import PrintComponent from './components/Print/PrintComponent';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 
       <Routes>
         <Route path="/" Component={Logo} />
+        <Route path="/recipt" element={<PrintComponent />} />
       </Routes>
       <PlayVideo />
       <TextImages />
@@ -22,7 +24,7 @@ function App() {
       <CountdownTimer />
       <ShareButton />
       <ContactForm />
-
+      <PrintComponent />
     </div>
   );
 }

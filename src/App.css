@@ -1,9 +1,14 @@
 body {
-  background-image: url('components/images/image4.jpg');
+  /* background-image: url('components/images/image4.jpg'); */
   background-size: cover;
   background-repeat: repeat;
-  width: 100vw;
+  width: 98vw;
   height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
   margin: 0;
   padding: 0;
 }
@@ -193,6 +198,8 @@ img {
 
 .contact-overlay {
   position: fixed;
+  margin: 0;
+  padding: 0;
   top: 0;
   left: 0;
   width: 100vw;
@@ -230,6 +237,8 @@ img {
 
 .popup-content {
   position: fixed;
+  margin: 0;
+  padding: 0;
   top: 0;
   left: 0;
   width: 100vw;
@@ -326,6 +335,8 @@ input {
     background-repeat: repeat;
     width: 100vw;
     height: 100vh;
+    margin: 0;
+    padding: 0;
   }
 
   .image-text1 {
