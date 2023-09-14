@@ -426,10 +426,9 @@ input {
   color: blue;
 }
 
-/* Input fields */
 .any input {
-  width: 155px; /* Adjust the width of the input fields as needed */
-  height: 35px; /* Adjust the height of the input fields as needed */
+  width: 155px;
+  height: 35px;
   padding: 0 5px;
   border: 1px solid #1329f0;
   border-radius: 25px;
