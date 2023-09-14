@@ -54,18 +54,21 @@ const ButtonPopup = () => {
   return (
     <div className="link-container">
       <div className="button-container">
+        <div className='buttons-link'>
         {[1, 2, 3, 4, 5, 6].map((index) => (
           <button
             type="button"
             className="button-names"
-            key={index}
             onClick={() => togglePopup(index - 1)}
+            key={index}
           >
             Link
             {' '}
             {index}
           </button>
         ))}
+        </div>
+
       </div>
       <div className="popup-container">
         {popups.map((isOpen, index) => (isOpen ? (
@@ -90,8 +93,6 @@ const ButtonPopup = () => {
                 &#x2716;
               </span>
               <div className="diff-container">
-                <div className="input-main">
-                  <div className="input-container">
                     {capturedImage ? (
                       <div className="captured-image-container">
                         <img src={capturedImage} alt="Captured" />
@@ -117,41 +118,50 @@ const ButtonPopup = () => {
                         )}
 
                         {showCamera ? (
-                          <button type="button" className="capture" onClick={captureImage}>
-                            Y
-                          </button>
+                           <div className="result-logo">
+                           <img className="capture" src={result} onClick={captureImage} style={{ height: '7rem', width: '2rem' }} />
+                         </div>
+                          // <button type="button" className="capture" onClick={captureImage}>
+                          //   Y
+                          // </button>
                         ) : null}
                       </div>
                     )}
-                  </div>
-                </div>
-                <div className="input-main">
-                  <div className="input-container">
-                    <div className="any">
-                      <input
-                        type="text"
-                        name="firstName"
-                        placeholder="First Name"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                      />
-                      <input
-                        type="text"
-                        name="lastName"
-                        placeholder="Last Name"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="result-logo">
-                      <img className="capture" src={result} style={{ height: '7rem', width: '2rem' }} />
-                    </div>
-                  </div>
+                
+                
+              
+      <div className="main-container" style={{ transform: 'rotate(45deg)' }}>
+ 
+    <div className="input-container">
+      <div className="any">
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          value={formData.firstName}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          value={formData.lastName}
+          onChange={handleChange}
+        />
+      </div>
+    
+    <div className="result-logo">
+      <img className="capture" src={result} style={{ height: '7rem', width: '2rem' }} />
+    </div>
+    </div>
+</div>
 
-                </div>
 
-                <div className="input-main">
+              
+
+                <div className="main-container">
                   <div className="input-container">
+                     <div className='any'>
                     <input
                       type="email"
                       name="email"
@@ -159,7 +169,10 @@ const ButtonPopup = () => {
                       value={formData.email}
                       onChange={handleChange}
                     />
-                    {/* <button type="button" className="capture">y</button> */}
+                     </div>
+                  <div className="result-logo">
+                 <img className="capture" src={result} style={{ height: '7rem', width: '2rem' }} />
+                  </div>
                   </div>
                 </div>
               </div>

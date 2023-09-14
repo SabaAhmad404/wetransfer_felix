@@ -3,7 +3,7 @@
 
 body {
   font-family: 'League Gothic', sans-serif;
-  background-image: url('components/images/image3.jpg');
+  background-image: url('components/images/background2.svg');
   background-size: cover;
 
   /* background-repeat: repeat; */
@@ -214,12 +214,34 @@ img {
 /* button popups start from here */
 .button-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 3rem;
   padding-bottom: 2vh;
-  padding-left: 25vw;
+  margin-left: 30vw;
 }
+ 
+.buttons-link{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+.image-links{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.7rem;
+}
+.six-images{
+  height: 7rem;
+  width: 3.5rem;
+}
+
+
 
 .button-names {
   height: 2rem;
@@ -236,8 +258,8 @@ img {
 
 .popup-content {
   position: fixed;
-  background-image: url("./components/images/FBX.png");
-  background-size: 200px 100px;
+  /* background-image: url("./components/images/FBX.png");
+  background-size: 200px 100px; */
   top: 0;
   left: 0;
   width: 100vw;
@@ -283,16 +305,13 @@ img {
 }
 
 .popup-close-icon {
-  color: rgb(247, 194, 51);
+  color: rgb(240, 240, 240);
   font-size: 24px;
   cursor: pointer;
   z-index: 9999;
 }
 
-/* .youtube{
-  height: 1rem;
-  width: 2rem;
-} */
+
 .circular-image {
   width: 36px; /* Set to the width of your icon */
   height: 36px;
@@ -317,23 +336,23 @@ img {
 
 .webcam {
   height: 9rem;
+  margin-top: 3rem;
 }
 
 .webcam-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .webcam-img {
   height: 9rem;
 }
 
-/* .capture {
-  width: 5rem;
-} */
 
-.input-main {
+
+/* .input-main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -341,21 +360,79 @@ img {
   width: 200px;
   background-color: white;
   transform: rotate(45deg);
-  overflow: hidden; /* Clip the rotated content */
+  overflow: hidden; 
+} */
+/* Main container */
+.main-container {
+  transform: rotate(45deg);
+  width: 260px; /* Adjust the width as needed */
+  height: 260px; /* Adjust the height as needed */
+  background-color: white;
+  border: 3px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
+
+
+/* Input container */
 .input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+  transform: rotate(-45deg);
+
+}
+.input-container .any{
+  margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Input fields */
+.any input {
+  width: 155px; /* Adjust the width of the input fields as needed */
+  height: 35px; /* Adjust the height of the input fields as needed */
+  padding: 0px 5px;
+  border: 1px solid #1329f0;
+  border-radius: 25px;
+  margin-left: 1rem;
+}
+input{
+  background-color: black;
+  color: blue;
+}
+
+/* Result logo (image) */
+
+
+/* Image */
+.capture {
+  height: 7rem;
+  width: 2rem;
+}
+
+
+/* .input-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  transform: rotate(-45deg); /* Counter-rotate to make the inputs straight */
-  width: 100%;
 }
-
-.input-container input {
-  /* Adjust the width as needed */
+.any{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+/* .input-container input {
   width: 4rem;
   margin-top: 3rem;
   padding: 5px;
@@ -363,26 +440,23 @@ img {
   border-radius: 5px;
   text-align: center;
 
-  /* transform: rotate(45deg);  */
-}
+} */
 
-.any {
+/* .any {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.input-container .webcam {
-  width: 40%; /* Adjust the width as needed */
+/* .input-container .webcam {
+  width: 40%; 
   margin: 5px;
   padding: 5px;
   border: 1px solid #1329f0;
   border-radius: 5px;
   text-align: center;
-
-  /* transform: rotate(45deg);  */
-}
+} */
 
 .colon {
   display: flex;
@@ -484,5 +558,14 @@ img {
   .diff-container {
     display: flex;
     flex-direction: column;
+    gap: 5.4rem;
+  }
+  .main-container{
+    width: 180px;
+    height: 180px;
+  }
+  .any input{
+    width: 145px;
+    margin-left: 0px;
   }
 }
