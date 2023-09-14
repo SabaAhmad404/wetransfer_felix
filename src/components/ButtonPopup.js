@@ -54,19 +54,19 @@ const ButtonPopup = () => {
   return (
     <div className="link-container">
       <div className="button-container">
-        <div className='buttons-link'>
-        {[1, 2, 3, 4, 5, 6].map((index) => (
-          <button
-            type="button"
-            className="button-names"
-            onClick={() => togglePopup(index - 1)}
-            key={index}
-          >
-            Link
-            {' '}
-            {index}
-          </button>
-        ))}
+        <div className="buttons-link">
+          {[1, 2, 3, 4, 5, 6].map((index) => (
+            <button
+              type="button"
+              className="button-names"
+              onClick={() => togglePopup(index - 1)}
+              key={index}
+            >
+              Link
+              {' '}
+              {index}
+            </button>
+          ))}
         </div>
 
       </div>
@@ -93,20 +93,20 @@ const ButtonPopup = () => {
                 &#x2716;
               </span>
               <div className="diff-container">
-                    {capturedImage ? (
-                      <div className="captured-image-container">
-                        <img src={capturedImage} alt="Captured" />
-                      </div>
+                {capturedImage ? (
+                  <div className="captured-image-container">
+                    <img src={capturedImage} alt="Captured" />
+                  </div>
+                ) : (
+                  <div className="webcam-container">
+                    {showCamera ? (
+                      <Webcam
+                        className="webcam"
+                        audio={false}
+                        ref={webcamRef}
+                        screenshotFormat="image/jpeg"
+                      />
                     ) : (
-                      <div className="webcam-container">
-                        {showCamera ? (
-                          <Webcam
-                            className="webcam"
-                            audio={false}
-                            ref={webcamRef}
-                            screenshotFormat="image/jpeg"
-                          />
-                        ) : (
                           /* eslint-disable */
                           <img
                             src={image1}

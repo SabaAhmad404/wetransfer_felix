@@ -221,27 +221,27 @@ img {
   padding-bottom: 2vh;
   margin-left: 30vw;
 }
- 
-.buttons-link{
+
+.buttons-link {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5rem;
 }
-.image-links{
+
+.image-links {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.7rem;
 }
-.six-images{
+
+.six-images {
   height: 7rem;
   width: 3.5rem;
 }
-
-
 
 .button-names {
   height: 2rem;
@@ -258,6 +258,7 @@ img {
 
 .popup-content {
   position: fixed;
+
   /* background-image: url("./components/images/FBX.png");
   background-size: 200px 100px; */
   top: 0;
@@ -311,7 +312,6 @@ img {
   z-index: 9999;
 }
 
-
 .circular-image {
   width: 36px; /* Set to the width of your icon */
   height: 36px;
@@ -360,8 +360,9 @@ img {
   width: 200px;
   background-color: white;
   transform: rotate(45deg);
-  overflow: hidden; 
+  overflow: hidden;
 } */
+
 /* Main container */
 .main-container {
   transform: rotate(45deg);
@@ -383,31 +384,33 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   justify-content: center;
   transform: rotate(-45deg);
-
 }
-.input-container .any{
+
+.input-container .any {
   margin-top: 7rem;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
+input {
+  background-color: black;
+  color: blue;
+}
+
 /* Input fields */
 .any input {
   width: 155px; /* Adjust the width of the input fields as needed */
   height: 35px; /* Adjust the height of the input fields as needed */
-  padding: 0px 5px;
+  padding: 0 5px;
   border: 1px solid #1329f0;
   border-radius: 25px;
   margin-left: 1rem;
 }
-input{
-  background-color: black;
-  color: blue;
-}
+
+
 
 /* Result logo (image) */
 
@@ -432,6 +435,7 @@ input{
   justify-content: center;
   align-items: center;
 } */
+
 /* .input-container input {
   width: 4rem;
   margin-top: 3rem;
@@ -450,7 +454,7 @@ input{
 } */
 
 /* .input-container .webcam {
-  width: 40%; 
+  width: 40%;
   margin: 5px;
   padding: 5px;
   border: 1px solid #1329f0;
@@ -560,12 +564,14 @@ input{
     flex-direction: column;
     gap: 5.4rem;
   }
-  .main-container{
+
+  .main-container {
     width: 180px;
     height: 180px;
   }
-  .any input{
+
+  .any input {
     width: 145px;
-    margin-left: 0px;
+    margin-left: 0;
   }
 }
