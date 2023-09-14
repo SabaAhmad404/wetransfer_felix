@@ -6,8 +6,6 @@ body {
   background-image: url('components/images/background2.svg');
   background-size: cover;
   letter-spacing: 0.4ch;
-
-  /* background-repeat: repeat; */
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -299,10 +297,6 @@ img {
 }
 
 .sharepopup-content {
-  /* position: fixed; */
-
-  /* top: 0;
-  left: 0; */
   width: 30vw;
   height: 45vh;
   color: white;
@@ -377,20 +371,6 @@ img {
   height: 9rem;
 }
 
-
-
-/* .input-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  width: 200px;
-  background-color: white;
-  transform: rotate(45deg);
-  overflow: hidden;
-} */
-
-/* Main container */
 .main-container {
   transform: rotate(45deg);
   width: 260px; /* Adjust the width as needed */
@@ -436,57 +416,10 @@ input {
   margin-left: 1rem;
 }
 
-
-
-/* Result logo (image) */
-
-
-/* Image */
 .capture {
   height: 7rem;
   width: 2rem;
 }
-
-
-/* .input-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-}
-.any{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* .input-container input {
-  width: 4rem;
-  margin-top: 3rem;
-  padding: 5px;
-  border: 1px solid #1329f0;
-  border-radius: 5px;
-  text-align: center;
-
-} */
-
-/* .any {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* .input-container .webcam {
-  width: 40%;
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid #1329f0;
-  border-radius: 5px;
-  text-align: center;
-} */
 
 .colon {
   display: flex;
@@ -522,8 +455,6 @@ input {
   body {
     background-image: url('components/images/background1.svg');
     background-size: cover;
-
-    /* background-repeat: repeat; */
     width: 100vw;
     max-height: 100%;
   }
