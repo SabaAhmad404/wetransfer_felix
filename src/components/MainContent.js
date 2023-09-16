@@ -5,7 +5,7 @@ import TextImages from './TextImages';
 import CountdownTimer from './CountdownTimer';
 import ShareButton from './ShareButton';
 import ContactForm from './ContactForm';
-import ButtonPopup from './ButtonPopup';
+import FormPopup from './FormPopup';
 
 function MainContent() {
   return (
@@ -13,7 +13,7 @@ function MainContent() {
       <Logo />
       <PlayVideo />
       <TextImages />
-      <ButtonPopup />
+      <FormPopup />
       <CountdownTimer />
       <ShareButton />
       <ContactForm />
