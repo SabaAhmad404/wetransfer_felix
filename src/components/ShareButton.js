@@ -7,7 +7,7 @@ import youtube1 from './images/youtube1.png';
 import kakao from './images/kakao.png';
 import blogger from './images/blogger.png';
 import TITOK from './images/TITOK.png';
-import shareicone from './images/shareicone.png';
+import white from './images/white.png';
 
 export default function ShareButton() {
   const shareUrl = 'https://www.yaavaay.com/';
@@ -50,10 +50,10 @@ export default function ShareButton() {
       >
         <img
           className="share-social-icone"
-          src={shareicone}
+          src={white}
           size="2x"
           style={{
-            color: '#1a2d4c', backgroundColor: 'lightgray', borderRadius: '50%', padding: '8px',
+            color: 'white', borderRadius: '50%', padding: '8px',
           }}
         />
       </span>

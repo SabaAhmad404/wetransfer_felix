@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import backvideo from './images/backvideo.mp4';
 
 const ButtonPopup = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
@@ -13,15 +14,10 @@ const ButtonPopup = ({ isOpen, onClose, children }) => {
               className="close-icon"
               onClick={() => {
                 onClose();
-                // togglePopup();
-                // clearImage();
-                // resetState();
               }}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   onClose();
-                  // togglePopup();
-                  // clearImage();
                 }
               }}
               role="button"
@@ -29,6 +25,15 @@ const ButtonPopup = ({ isOpen, onClose, children }) => {
             >
               &#x2716;
             </span>
+
+            {/* Video section */}
+            <div className="video-overlay">
+              <video autoPlay muted loop className="background-video">
+                <source src={backvideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
             <div className="diff-container">
               {children}
             </div>
