@@ -5,6 +5,8 @@ body {
   background-image: url('components/images/image3.jpg');
   background-size: cover;
   letter-spacing: 0.4ch;
+
+  /* background-repeat: repeat; */
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -28,6 +30,26 @@ img {
 
 .logo-imge {
   border: none;
+}
+
+.img-btn {
+  margin: 10px;
+  padding: 0;
+  border: none;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh !important;
+  width: 5vw;
+}
+
+.img-btn img {
+  opacity: 0.7;
+  height: 50px;
+  width: 70px;
+  border: none;
+  margin: 10px;
 }
 
 .autoplay-container {
@@ -248,32 +270,37 @@ img {
 }
 
 .button-names {
-  height: 2rem;
+  height: 7vh;
   font-size: 2vw;
   font-weight: bold;
   border: none;
   text-decoration: underline;
   padding-left: 0;
   padding-right: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   margin-bottom: 2vh;
   background-color: transparent;
   color: rgb(16, 16, 204);
 }
 
 .button-names img {
-  height: 4vh;
+  height: 8vh;
   width: 5vw;
   margin-top: 3vh;
-  opacity: inherit;
+  background: inherit;
+  opacity: 1;
   border: none;
 }
 
 .popup-content {
   position: fixed;
-  background-image: url("./components/images/FBX.png");
+
+  /* background-image: url("./components/images/FBX.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 200px 100px;
+  background-size: 200px 100px; */
   top: 0;
   left: 0;
   width: 100vw;
@@ -358,11 +385,11 @@ img {
 }
 
 .webcam-img {
-  height: 9rem;
+  height: 20vh;
 }
 
 .main-container {
-  transform: rotate(45deg);
+/*   transform: rotate(45deg); */
   width: 260px; /* Adjust the width as needed */
   height: 260px; /* Adjust the height as needed */
   background-color: white;
@@ -372,6 +399,21 @@ img {
   align-items: center;
   position: relative;
   overflow: hidden;
+  
+/* .capture {
+  background-image: ;
+} */
+
+.input-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+
+  /* background-color: white;
+  transform: rotate(45deg);
+  overflow: hidden;  Clip the rotated content */
 }
 
 .input-container {
@@ -379,11 +421,37 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: rotate(-45deg);
+/*   transform: rotate(-45deg); */
 }
 
 .input-container .any {
   margin-top: 7rem;
+  justify-content: center;
+  align-items: center; /* Counter-rotate to make the inputs straight */
+  width: 100%;
+}
+
+.input-container input {
+  /* Adjust the width as needed */
+
+  margin-top: 3rem;
+  padding: 8px 10px;
+  font-size: 20px;
+  background-color: #1329f0;
+  color: white;
+  border: 1px solid #1329f0;
+  border-radius: 5px;
+  text-align: center;
+
+  /* transform: rotate(45deg);  */
+}
+
+.input-container input[type="text"]::placeholder,
+.input-container input[type="email"]::placeholder {
+  color: white;
+}
+
+.any {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -402,6 +470,11 @@ input {
   border-radius: 25px;
   margin-left: 1rem;
 }
+
+.input-container .webcam {
+  height: 25vh; /* Adjust the width as needed */
+  border-radius: 5px;
+  text-align: center;
 
 .capture {
   height: 7rem;
@@ -424,10 +497,34 @@ input {
 
 .diff-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10rem;
+
+  /* background-image: url("./components/images/FBX.png");
+  background-repeat: no-repeat;
+  background-position: center; */
+
+  /* background-size: 50vh 50vw; */
+  height: 50vh;
+  width: 50vw;
+  position: relative;
+}
+
+.diff-container ::before {
+  content: "";
+
+  /* background-image: url("./components/images/FBX.png"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transform: rotate(0deg) translateZ(10em); /* Rotate only the pseudo-element */
+  z-index: -1; /* Place the pseudo-element behind the content */
 }
 
 .email-container {
