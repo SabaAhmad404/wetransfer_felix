@@ -2,7 +2,7 @@
 
 body {
   font-family: 'League Gothic', sans-serif;
-  background-image: url('components/images/background2.svg');
+  background-image: url('components/images/image3.jpg');
   background-size: cover;
   letter-spacing: 0.4ch;
   width: 100%;
@@ -436,6 +436,17 @@ input {
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire container */
+  z-index: -1; /* Puts the video behind other content */
 }
 
 @media (max-width: 768px) {

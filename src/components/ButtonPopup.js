@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Webcam from 'react-webcam';
 import image1 from './images/image1.jpg';
 import result from './images/result.png';
+import backvideo from './images/backvideo.mp4';
+
 
 const ButtonPopup = () => {
   const [popups, setPopups] = useState(Array(6).fill(false));
@@ -92,6 +94,12 @@ const ButtonPopup = () => {
               >
                 &#x2716;
               </span>
+              <div className={`video-overlay ${popups.some((isOpen) => isOpen) ? 'show-video' : ''}`}>
+        <video autoPlay muted loop className="background-video">
+          <source src={backvideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
               <div className="diff-container">
                 {capturedImage ? (
                   <div className="captured-image-container">
@@ -180,6 +188,7 @@ const ButtonPopup = () => {
           </div>
         ) : null))}
       </div>
+      
     </div>
   );
 };
