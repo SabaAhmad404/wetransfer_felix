@@ -399,7 +399,7 @@ img {
   align-items: center;
   position: relative;
   overflow: hidden;
-  
+}
 /* .capture {
   background-image: ;
 } */
@@ -475,7 +475,7 @@ input {
   height: 25vh; /* Adjust the width as needed */
   border-radius: 5px;
   text-align: center;
-
+}
 .capture {
   height: 7rem;
   width: 2rem;
