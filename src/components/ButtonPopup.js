@@ -25,7 +25,7 @@ const ButtonPopup = ({ isOpen, onClose, children }) => {
             >
               &#x2716;
             </span>
-            
+
             {/* Video section */}
             <div className="video-overlay">
               <video autoPlay muted loop className="background-video">
@@ -33,7 +33,7 @@ const ButtonPopup = ({ isOpen, onClose, children }) => {
                 Your browser does not support the video tag.
               </video>
             </div>
-            
+
             <div className="diff-container">
               {children}
             </div>

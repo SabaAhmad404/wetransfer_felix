@@ -389,7 +389,7 @@ img {
 }
 
 .main-container {
-/*   transform: rotate(45deg); */
+  /*   transform: rotate(45deg); */
   width: 260px; /* Adjust the width as needed */
   height: 260px; /* Adjust the height as needed */
   background-color: white;
@@ -400,6 +400,7 @@ img {
   position: relative;
   overflow: hidden;
 }
+
 /* .capture {
   background-image: ;
 } */
@@ -421,7 +422,14 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-/*   transform: rotate(-45deg); */
+
+  /*   transform: rotate(-45deg); */
+}
+
+.any {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .input-container .any {
@@ -429,6 +437,11 @@ img {
   justify-content: center;
   align-items: center; /* Counter-rotate to make the inputs straight */
   width: 100%;
+}
+
+input {
+  background-color: black;
+  color: blue;
 }
 
 .input-container input {
@@ -451,17 +464,6 @@ img {
   color: white;
 }
 
-.any {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-input {
-  background-color: black;
-  color: blue;
-}
-
 .any input {
   width: 155px;
   height: 35px;
@@ -476,6 +478,7 @@ input {
   border-radius: 5px;
   text-align: center;
 }
+
 .capture {
   height: 7rem;
   width: 2rem;
@@ -534,7 +537,6 @@ input {
   justify-content: center;
   gap: 8px;
 }
-
 
 .background-video {
   position: absolute;
