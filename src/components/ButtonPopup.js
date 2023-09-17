@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ButtonPopup = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
@@ -36,6 +37,16 @@ const ButtonPopup = ({ isOpen, onClose, children }) => {
       </div>
     </div>
   );
+};
+
+ButtonPopup.propTypes = {
+  isOpen: PropTypes.bool.isRequired, // 'isOpen' should be a required boolean
+  onClose: PropTypes.func.isRequired, // 'onClose' should be a required function
+  children: PropTypes.node, // 'children' can be any renderable React node
+};
+
+ButtonPopup.defaultProps = {
+  children: null, // You can provide a default value here if needed
 };
 
 export default ButtonPopup;
