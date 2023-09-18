@@ -471,6 +471,20 @@ img {
   position: relative;
 }
 
+.diff-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.diff-container .button-names img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
 .diff-container ::before {
   content: "";
 

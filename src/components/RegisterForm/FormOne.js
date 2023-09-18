@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import Webcam from 'react-webcam';
 import image1 from '../images/image1.jpg';
+import { useNavigate } from 'react-router-dom';
+import btnImg from '../images/WITH-ALPHA-CHANNEL_GIhan_BTV_Creation_2nd-option__the-better-Y-BUTTON_Fiverr-Test_.gif';
 
 const FormOne = () => {
   const [capturedImage, setCapturedImage] = useState(null);
   const [currentStep, setCurrentStep] = useState(1);
+  const navigate = useNavigate();
+
   const totalSections = 3;
   const [formData, setFormData] = useState({
-    user_image: '',
+    // user_image: '',
     firstName: '',
     lastName: '',
     email: '',
@@ -19,6 +23,10 @@ const FormOne = () => {
   const captureImage = () => {
     const imageSrc = webcamRef.current.getScreenshot();
     setCapturedImage(imageSrc);
+    // setFormData({
+    //   ...formData,
+    //   ['user_image']: captureImage,
+    // });
   };
 
   //   const clearImage = () => {
@@ -43,29 +51,35 @@ const FormOne = () => {
     setCurrentStep((prevSection) => (prevSection > 1 ? prevSection - 1 : prevSection));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+
     e.preventDefault();
+    // const formImage = new FormData();
+    // formImage.append('user_image', captureImage)
     console.log('Form Data:', formData);
-    // try {
-    //   const response = await fetch('https://your-api-endpoint.com', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(formData),
-    //   });
-    //   if (response.ok) {
-    //     // Handle successful API response
-    //     console.log(formData);
-    //     console.log('Data posted successfully');
-    //   } else {
-    //     // Handle API errors
-    //     console.error('Error posting data to API');
-    //   }
-    // } catch (error) {
-    //   // Handle network errors
-    //   console.error('Network error:', error);
-    // }
+    try {
+      const response = await fetch('https://api.yaavaay.com/v1/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formData,
+        }),
+      });
+      if (response.ok) {
+        // Handle successful API response
+        console.log(formData);
+        navigate('./payment')
+        console.log('Data posted successfully');
+      } else {
+        // Handle API errors
+        console.error('Error posting data to API');
+      }
+    } catch (error) {
+      // Handle network errors
+      console.error('Network error:', error);
+    }
   };
 
   const renderSection = () => {
@@ -117,14 +131,14 @@ const FormOne = () => {
                          type="text"
                          name="firstName"
                          placeholder="First Name"
-                         value={formData.firstName}
+                        //  value={formData.firstName}
                          onChange={handleChange}
                        />
                        <input
                          type="text"
                          name="lastName"
                          placeholder="Last Name"
-                         value={formData.lastName}
+                        //  value={formData.lastName}
                          onChange={handleChange}
                        />
                      </div>
@@ -140,7 +154,7 @@ const FormOne = () => {
               type="email"
               name="email"
               placeholder="Email"
-              value={formData.email}
+              // value={formData.email}
               onChange={handleChange}
             />
             {/* <button type="button" className="capture">y</button> */}
@@ -157,11 +171,11 @@ const FormOne = () => {
     <div className="diff-container">
         <form onSubmit={handleSubmit}>
             {renderSection()}
-              <button onClick={handlePrevious} disabled={currentStep === 1}>Previous</button>
+              {/* <button onClick={handlePrevious} disabled={currentStep === 1}>Previous</button> */}
               {currentStep < totalSections ? (
-              <button onClick={handleNext}>Next</button>
+              <button onClick={handleNext} type="button" className='button-names'> <img src={btnImg} alt="y-logo" /></button>
             ) : (
-                <button type='submit'>Submit</button>
+                <button type='submit' className='button-names'><img src={btnImg} alt="y-logo" /></button>
 
             )}
         </form>

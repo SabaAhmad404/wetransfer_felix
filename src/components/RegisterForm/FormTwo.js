@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Webcam from 'react-webcam';
 import image1 from '../images/image1.jpg';
+import btnImg from '../images/WITH-ALPHA-CHANNEL_GIhan_BTV_Creation_2nd-option__the-better-Y-BUTTON_Fiverr-Test_.gif';
 
 const FormTwo = () => {
   const [capturedImage, setCapturedImage] = useState(null);
@@ -157,11 +158,11 @@ const FormTwo = () => {
     <div className="diff-container">
         <form onSubmit={handleSubmit}>
             {renderSection()}
-              <button onClick={handlePrevious} disabled={currentStep === 1}>Previous</button>
+              {/* <button onClick={handlePrevious} disabled={currentStep === 1}>Previous</button> */}
               {currentStep < totalSections ? (
-              <button onClick={handleNext}>Next</button>
+              <button onClick={handleNext} type='button' className='button-names'> <img src={btnImg} alt="y-logo" /></button>
             ) : (
-                <button type='submit'>Submit</button>
+                <button type='submit' className='button-names'> <img src={btnImg} alt="y-logo" /></button>
 
             )}
         </form>
