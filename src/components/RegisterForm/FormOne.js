@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Webcam from 'react-webcam';
-import image1 from '../images/image1.jpg';
 import { useNavigate } from 'react-router-dom';
+import image1 from '../images/image1.jpg';
 import btnImg from '../images/WITH-ALPHA-CHANNEL_GIhan_BTV_Creation_2nd-option__the-better-Y-BUTTON_Fiverr-Test_.gif';
 
 const FormOne = () => {
@@ -46,13 +46,12 @@ const FormOne = () => {
     setCurrentStep((prevSection) => (prevSection < totalSections ? prevSection + 1 : prevSection));
   };
 
-  const handlePrevious = () => {
-    // Move to the previous section
-    setCurrentStep((prevSection) => (prevSection > 1 ? prevSection - 1 : prevSection));
-  };
+  // const handlePrevious = () => {
+  //   // Move to the previous section
+  //   setCurrentStep((prevSection) => (prevSection > 1 ? prevSection - 1 : prevSection));
+  // };
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
     // const formImage = new FormData();
     // formImage.append('user_image', captureImage)
@@ -63,9 +62,7 @@ const FormOne = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          formData,
-        }),
+        body: JSON.stringify(formData),
       });
       if (response.ok) {
         // Handle successful API response
