@@ -5,8 +5,6 @@ body {
   background-image: url('components/images/image3.jpg');
   background-size: cover;
   letter-spacing: 0.4ch;
-
-  /* background-repeat: repeat; */
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -240,10 +238,9 @@ img {
 
 .button-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 3rem;
   padding-bottom: 2vh;
   margin-left: 30vw;
 }
@@ -296,11 +293,6 @@ img {
 
 .popup-content {
   position: fixed;
-
-  /* background-image: url("./components/images/FBX.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 200px 100px; */
   top: 0;
   left: 0;
   width: 100vw;
@@ -389,9 +381,8 @@ img {
 }
 
 .main-container {
-  /*   transform: rotate(45deg); */
-  width: 260px; /* Adjust the width as needed */
-  height: 260px; /* Adjust the height as needed */
+  width: 260px;
+  height: 260px;
   background-color: white;
   border: 3px solid blue;
   display: flex;
@@ -401,20 +392,12 @@ img {
   overflow: hidden;
 }
 
-/* .capture {
-  background-image: ;
-} */
-
 .input-main {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200px;
   width: 200px;
-
-  /* background-color: white;
-  transform: rotate(45deg);
-  overflow: hidden;  Clip the rotated content */
 }
 
 .input-container {
@@ -422,20 +405,15 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  /*   transform: rotate(-45deg); */
-}
-
-.any {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  height: 70%;
 }
 
 .input-container .any {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 7rem;
-  justify-content: center;
-  align-items: center; /* Counter-rotate to make the inputs straight */
+  align-items: center;
   width: 100%;
 }
 
@@ -445,18 +423,14 @@ input {
 }
 
 .input-container input {
-  /* Adjust the width as needed */
-
-  margin-top: 3rem;
-  padding: 8px 10px;
-  font-size: 20px;
+  margin-top: 10px;
+  padding: 8px 5px;
+  font-size: 18px;
   background-color: #1329f0;
   color: white;
   border: 1px solid #1329f0;
   border-radius: 5px;
   text-align: center;
-
-  /* transform: rotate(45deg);  */
 }
 
 .input-container input[type="text"]::placeholder,
@@ -464,17 +438,8 @@ input {
   color: white;
 }
 
-.any input {
-  width: 155px;
-  height: 35px;
-  padding: 0 5px;
-  border: 1px solid #1329f0;
-  border-radius: 25px;
-  margin-left: 1rem;
-}
-
 .input-container .webcam {
-  height: 25vh; /* Adjust the width as needed */
+  height: 25vh;
   border-radius: 5px;
   text-align: center;
 }
@@ -503,21 +468,27 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  /* background-image: url("./components/images/FBX.png");
-  background-repeat: no-repeat;
-  background-position: center; */
-
-  /* background-size: 50vh 50vw; */
   height: 50vh;
   width: 50vw;
   position: relative;
 }
 
+.diff-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.diff-container .button-names img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
 .diff-container ::before {
   content: "";
-
-  /* background-image: url("./components/images/FBX.png"); */
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
@@ -526,8 +497,8 @@ input {
   top: 0;
   left: 0;
   transform-style: preserve-3d;
-  transform: rotate(0deg) translateZ(10em); /* Rotate only the pseudo-element */
-  z-index: -1; /* Place the pseudo-element behind the content */
+  transform: rotate(0deg) translateZ(10em);
+  z-index: -1;
 }
 
 .email-container {
@@ -543,9 +514,9 @@ input {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the video covers the entire container */
-  z-index: -1; /* Puts the video behind other content */
+  height: 110%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 @media (max-width: 768px) {
