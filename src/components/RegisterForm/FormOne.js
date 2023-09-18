@@ -55,7 +55,6 @@ const FormOne = () => {
     e.preventDefault();
     // const formImage = new FormData();
     // formImage.append('user_image', captureImage)
-    console.log('Form Data:', formData);
     try {
       const response = await fetch('https://api.yaavaay.com/v1/users', {
         method: 'POST',
@@ -66,12 +65,10 @@ const FormOne = () => {
       });
       if (response.ok) {
         // Handle successful API response
-        console.log(formData);
-        navigate('./payment')
-        console.log('Data posted successfully');
+        navigate('./payment');
       } else {
         // Handle API errors
-        console.error('Error posting data to API');
+        navigate('/')
       }
     } catch (error) {
       // Handle network errors

@@ -39,14 +39,13 @@ const FormThree = () => {
     setCurrentStep((prevSection) => (prevSection < totalSections ? prevSection + 1 : prevSection));
   };
 
-  const handlePrevious = () => {
-    // Move to the previous section
-    setCurrentStep((prevSection) => (prevSection > 1 ? prevSection - 1 : prevSection));
-  };
+  // const handlePrevious = () => {
+  //   // Move to the previous section
+  //   setCurrentStep((prevSection) => (prevSection > 1 ? prevSection - 1 : prevSection));
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
     // try {
     //   const response = await fetch('https://your-api-endpoint.com', {
     //     method: 'POST',
