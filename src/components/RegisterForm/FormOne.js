@@ -7,7 +7,7 @@ import btnImg from '../images/WITH-ALPHA-CHANNEL_GIhan_BTV_Creation_2nd-option__
 const FormOne = () => {
   const [capturedImage, setCapturedImage] = useState(null);
   const [currentStep, setCurrentStep] = useState(1);
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const totalSections = 3;
@@ -66,16 +66,15 @@ const FormOne = () => {
         navigate('./payment');
       } else {
         // Handle API errors
-        if(response.status === 400) {
-          throw new Error('Bad request: the data provided is invalid')
-        } else if(response.status === 401) {
-          throw new Error('Unauthorized: authorization require') 
-        } else if(response.status === 500) {
-          throw new Error('Internal server error: Something went wrong on the server.') 
-        } else{
+        if (response.status === 400) {
+          throw new Error('Bad request: the data provided is invalid');
+        } else if (response.status === 401) {
+          throw new Error('Unauthorized: authorization require'); 
+        } else if (response.status === 500) {
+          throw new Error('Internal server error: Something went wrong on the server.');
+        } else {
           throw new Error('Network response was not ok');
         }
-
       }
     } catch (error) {
       // Handle network errors
