@@ -46,7 +46,7 @@ const FormFive = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
+    // console.log('Form Data:', formData);
     // try {
     //   const response = await fetch('https://your-api-endpoint.com', {
     //     method: 'POST',

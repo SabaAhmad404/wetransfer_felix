@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Pacifico&display=swap');
 
 body {
@@ -85,7 +84,6 @@ img {
   color: blue;
 }
 
-/* imagestext start from here */
 .image-gallery {
   display: flex;
   flex-direction: column;
@@ -140,8 +138,6 @@ img {
   margin-top: 2rem;
 }
 
-/* contact form start here */
-
 .contact-container {
   display: flex;
   flex-direction: column;
@@ -160,9 +156,6 @@ img {
 
 .contact-popup {
   background-image: url('components/images/background2.svg');
-
-  /* border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px; */
   border-radius: 20px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -238,21 +231,42 @@ img {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px); /* Apply a blur effect to the background */
-  z-index: 1000; /* Ensure the overlay is above other content */
+  backdrop-filter: blur(5px);
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* button popups start from here */
 .button-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 3rem;
   padding-bottom: 2vh;
-  padding-left: 25vw;
+  margin-left: 30vw;
+}
+
+.buttons-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.image-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.7rem;
+}
+
+.six-images {
+  height: 7rem;
+  width: 3.5rem;
 }
 
 .button-names {
@@ -302,10 +316,6 @@ img {
 }
 
 .sharepopup-content {
-  /* position: fixed; */
-
-  /* top: 0;
-  left: 0; */
   width: 30vw;
   height: 45vh;
   color: white;
@@ -336,18 +346,14 @@ img {
 }
 
 .popup-close-icon {
-  color: rgb(247, 194, 51);
+  color: rgb(240, 240, 240);
   font-size: 24px;
   cursor: pointer;
   z-index: 9999;
 }
 
-/* .youtube{
-  height: 1rem;
-  width: 2rem;
-} */
 .circular-image {
-  width: 36px; /* Set to the width of your icon */
+  width: 36px;
   height: 36px;
   border: none;
 }
@@ -356,8 +362,6 @@ img {
   height: 4.1rem;
   width: 8vw;
 }
-
-/* webcapturing start here */
 
 .close-icon {
   position: fixed;
@@ -370,16 +374,31 @@ img {
 
 .webcam {
   height: 9rem;
+  margin-top: 3rem;
 }
 
 .webcam-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .webcam-img {
   height: 20vh;
+}
+
+.main-container {
+  /*   transform: rotate(45deg); */
+  width: 260px; /* Adjust the width as needed */
+  height: 260px; /* Adjust the height as needed */
+  background-color: white;
+  border: 3px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 /* .capture {
@@ -401,9 +420,28 @@ img {
 .input-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /*   transform: rotate(-45deg); */
+}
+
+.any {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-container .any {
+  margin-top: 7rem;
   justify-content: center;
   align-items: center; /* Counter-rotate to make the inputs straight */
   width: 100%;
+}
+
+input {
+  background-color: black;
+  color: blue;
 }
 
 .input-container input {
@@ -426,19 +464,24 @@ img {
   color: white;
 }
 
-.any {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.any input {
+  width: 155px;
+  height: 35px;
+  padding: 0 5px;
+  border: 1px solid #1329f0;
+  border-radius: 25px;
+  margin-left: 1rem;
 }
 
 .input-container .webcam {
   height: 25vh; /* Adjust the width as needed */
   border-radius: 5px;
   text-align: center;
+}
 
-  /* transform: rotate(45deg);  */
+.capture {
+  height: 7rem;
+  width: 2rem;
 }
 
 .colon {
@@ -509,12 +552,20 @@ img {
   gap: 8px;
 }
 
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire container */
+  z-index: -1; /* Puts the video behind other content */
+}
+
 @media (max-width: 768px) {
   body {
     background-image: url('components/images/background1.svg');
     background-size: cover;
-
-    /* background-repeat: repeat; */
     width: 100vw;
     max-height: 100%;
   }
@@ -581,5 +632,16 @@ img {
   .diff-container {
     display: flex;
     flex-direction: column;
+    gap: 5.4rem;
+  }
+
+  .main-container {
+    width: 180px;
+    height: 180px;
+  }
+
+  .any input {
+    width: 145px;
+    margin-left: 0;
   }
 }
