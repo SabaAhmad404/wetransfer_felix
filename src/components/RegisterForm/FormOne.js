@@ -47,11 +47,6 @@ const FormOne = () => {
     setCurrentStep((prevSection) => (prevSection < totalSections ? prevSection + 1 : prevSection));
   };
 
-  // const handlePrevious = () => {
-  //   // Move to the previous section
-  //   setCurrentStep((prevSection) => (prevSection > 1 ? prevSection - 1 : prevSection));
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const formImage = new FormData();
@@ -66,6 +61,8 @@ const FormOne = () => {
       });
       if (response.ok) {
         // Handle successful API response
+        // const userData = await response.json();
+        // const newUserId = userData.user.id;
         navigate('./payment');
       } else {
         // Handle API errors
@@ -134,16 +131,20 @@ const FormOne = () => {
                        <input
                          type="text"
                          name="firstName"
-                         placeholder="First Name"
-                        //  value={formData.firstName}
+                         placeholder="First Name"                        
                          onChange={handleChange}
+                         required
+                         minLength={3}
+                         maxLength={13}
                        />
                        <input
                          type="text"
                          name="lastName"
                          placeholder="Last Name"
-                        //  value={formData.lastName}
                          onChange={handleChange}
+                         required
+                         minLength={3}
+                         maxLength={13}
                        />
                      </div>
                    </div>
@@ -158,8 +159,8 @@ const FormOne = () => {
               type="email"
               name="email"
               placeholder="Email"
-              // value={formData.email}
               onChange={handleChange}
+              required
             />
             {/* <button type="button" className="capture">y</button> */}
           </div>
@@ -175,12 +176,10 @@ const FormOne = () => {
     <div className="diff-container">
         <form onSubmit={handleSubmit}>
             {renderSection()}
-              {/* <button onClick={handlePrevious} disabled={currentStep === 1}>Previous</button> */}
-              {currentStep < totalSections ? (
+              {currentStep < totalSections && (
               <button onClick={handleNext} type="button" className='button-names'> <img src={btnImg} alt="y-logo" /></button>
-            ) : (
-                <button type='submit' className='button-names'><img src={btnImg} alt="y-logo" /></button>
-
+            )} 
+              {currentStep=== totalSections && (<button type='submit' className='button-names'><img src={btnImg} alt="y-logo" /></button>
             )}
         </form>
               {error && <p>{error}</p>}

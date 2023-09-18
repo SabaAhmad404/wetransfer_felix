@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import Webcam from 'react-webcam';
+import { useNavigate } from 'react-router';
 import image1 from '../images/image1.jpg';
 import btnImg from '../images/WITH-ALPHA-CHANNEL_GIhan_BTV_Creation_2nd-option__the-better-Y-BUTTON_Fiverr-Test_.gif';
 
 const FormTwo = () => {
   const [capturedImage, setCapturedImage] = useState(null);
   const [currentStep, setCurrentStep] = useState(1);
+  const [error, setError] = useState(null)
+  const navigate = useNavigate();
   const totalSections = 3;
   const [formData, setFormData] = useState({
     user_image: '',
@@ -39,33 +42,40 @@ const FormTwo = () => {
     setCurrentStep((prevSection) => (prevSection < totalSections ? prevSection + 1 : prevSection));
   };
 
-  // const handlePrevious = () => {
-  //   // Move to the previous section
-  //   setCurrentStep((prevSection) => (prevSection > 1 ? prevSection - 1 : prevSection));
-  // };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // try {
-    //   const response = await fetch('https://your-api-endpoint.com', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(formData),
-    //   });
-    //   if (response.ok) {
-    //     // Handle successful API response
-    //     console.log(formData);
-    //     console.log('Data posted successfully');
-    //   } else {
-    //     // Handle API errors
-    //     console.error('Error posting data to API');
-    //   }
-    // } catch (error) {
-    //   // Handle network errors
-    //   console.error('Network error:', error);
-    // }
+    // const formImage = new FormData();
+    // formImage.append('user_image', captureImage)
+    try {
+      const response = await fetch('https://api.yaavaay.com/v1/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        // Handle successful API response
+        // const userData = await response.json();
+        // const newUserId = userData.user.id;
+        navigate('./payment');
+      } else {
+        // Handle API errors
+        if(response.status === 400) {
+          throw new Error('Bad request: the data provided is invalid')
+        } else if(response.status === 401) {
+          throw new Error('Unauthorized: authorization require') 
+        } else if(response.status === 500) {
+          throw new Error('Internal server error: Something went wrong on the server.') 
+        } else{
+          throw new Error('Network response was not ok');
+        }
+
+      }
+    } catch (error) {
+      // Handle network errors
+      setError(error.message);
+    }
   };
 
   const renderSection = () => {
@@ -117,15 +127,19 @@ const FormTwo = () => {
                          type="text"
                          name="firstName"
                          placeholder="First Name"
-                         value={formData.firstName}
                          onChange={handleChange}
+                         required
+                         minLength={3}
+                         maxLength={13}
                        />
                        <input
                          type="text"
                          name="lastName"
                          placeholder="Last Name"
-                         value={formData.lastName}
                          onChange={handleChange}
+                         required
+                         minLength={3}
+                         maxLength={13}
                        />
                      </div>
                    </div>
@@ -140,7 +154,7 @@ const FormTwo = () => {
               type="email"
               name="email"
               placeholder="Email"
-              value={formData.email}
+              required
               onChange={handleChange}
             />
             {/* <button type="button" className="capture">y</button> */}
@@ -158,14 +172,13 @@ const FormTwo = () => {
         <form onSubmit={handleSubmit}>
             {renderSection()}
               {/* <button onClick={handlePrevious} disabled={currentStep === 1}>Previous</button> */}
-              {currentStep < totalSections ? (
-              <button onClick={handleNext} type='button' className='button-names'> <img src={btnImg} alt="y-logo" /></button>
-            ) : (
-                <button type='submit' className='button-names'> <img src={btnImg} alt="y-logo" /></button>
-
+              {currentStep < totalSections && (
+              <button onClick={handleNext} type="button" className='button-names'> <img src={btnImg} alt="y-logo" /></button>
+            )} 
+              {currentStep=== totalSections && (<button type='submit' className='button-names'><img src={btnImg} alt="y-logo" /></button>
             )}
         </form>
-
+      {error && <p>{error}</p>}
     </div>
   );
 };
