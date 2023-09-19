@@ -4,7 +4,7 @@ import MainContent from './components/MainContent';
 import './App.css';
 import PrintComponent from './components/Print/PrintComponent';
 import Payment from './components/Payment/Payment';
-import FaceDetection from './facedetection/FaceDetection';
+import FaceDetection from './components/facedetection/FaceDetection';
 
 function App() {
   return (
