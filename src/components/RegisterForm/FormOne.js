@@ -12,7 +12,7 @@ const FormOne = () => {
 
   const totalSections = 3;
   const [formData, setFormData] = useState({
-    // user_image: '',
+    image: '',
     firstName: '',
     lastName: '',
     email: '',
@@ -24,10 +24,11 @@ const FormOne = () => {
   const captureImage = () => {
     const imageSrc = webcamRef.current.getScreenshot();
     setCapturedImage(imageSrc);
-    // setFormData({
-    //   ...formData,
-    //   ['user_image']: captureImage,
-    // });
+    const key = 'image';
+    setFormData({
+      ...formData,
+      [key]: imageSrc,
+    });
   };
 
   //   const clearImage = () => {
@@ -50,7 +51,7 @@ const FormOne = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const formImage = new FormData();
-    // formImage.append('user_image', captureImage)
+    // formData.append('image', captureImage)
     try {
       const response = await fetch('https://api.yaavaay.com/v1/users', {
         method: 'POST',
