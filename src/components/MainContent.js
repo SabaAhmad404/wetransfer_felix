@@ -6,6 +6,7 @@ import CountdownTimer from './CountdownTimer';
 import ShareButton from './ShareButton';
 import ContactForm from './ContactForm';
 import FormPopup from './FormPopup';
+// import FaceDetection from './FaceDetection';
 
 function MainContent() {
   return (
@@ -17,6 +18,7 @@ function MainContent() {
       <CountdownTimer />
       <ShareButton />
       <ContactForm />
+      {/* <FaceDetection/> */}
     </>
   );
 }
