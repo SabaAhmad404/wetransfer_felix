@@ -27,7 +27,7 @@ const FormOne = () => {
     const key = 'image';
     setFormData({
       ...formData,
-      [key]: captureImage,
+      [key]: imageSrc,
     });
   };
 
@@ -50,7 +50,6 @@ const FormOne = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(formData);
     // const formImage = new FormData();
     // formData.append('image', captureImage)
     try {
