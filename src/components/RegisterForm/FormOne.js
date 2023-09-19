@@ -24,9 +24,10 @@ const FormOne = () => {
   const captureImage = () => {
     const imageSrc = webcamRef.current.getScreenshot();
     setCapturedImage(imageSrc);
+    const key = 'image';
     setFormData({
       ...formData,
-      ['image']: captureImage,
+      [key]: captureImage,
     });
   };
 
