@@ -72,7 +72,7 @@ export default function ContactForm() {
             }
           }}
         >
-          Contact Us
+          Contact
         </span>
         {isOpen && (
         <div
@@ -114,7 +114,7 @@ export default function ContactForm() {
               </span>
             </div>
             <div className="contact-form">
-              <h2 className="heading">Contact Form</h2>
+              <h2 className="heading">Contact</h2>
               <form className="form-inputs" method="post" onSubmit={handleSubmit}>
                 <input
                   type="email"
