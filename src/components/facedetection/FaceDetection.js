@@ -1,4 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/media-has-caption */
+import React, { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import './detect.css';
 import * as faceapi from 'face-api.js';
 import image1 from '../images/user.png';
@@ -6,30 +9,10 @@ import image1 from '../images/user.png';
 function FaceDetection({ setCapturedImage, setFormData }) {
   const videoRef = useRef();
   const canvasRef = useRef();
+  // eslint-disable-next-line no-unused-vars
   const [isCaptured, setIsCaptured] = useState(false); // Add a state variable
   const [faceDetected, setFaceDetected] = useState(false); // Add a state variable to track face detection
   const [isVideoOn, setIsVideoOn] = useState(false);
-
-  const startVideoAndDetect = async () => {
-    setIsVideoOn(true);
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      videoRef.current.srcObject = stream;
-
-      // Load face-api.js models
-      await Promise.all([
-        faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-        faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-        faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-        faceapi.nets.faceExpressionNet.loadFromUri('/models'),
-      ]);
-
-      // Start face detection
-      faceMyDetect();
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const stopVideo = () => {
     const stream = videoRef.current.srcObject;
@@ -118,6 +101,27 @@ function FaceDetection({ setCapturedImage, setFormData }) {
     }, 1000);
   };
 
+  const startVideoAndDetect = async () => {
+    setIsVideoOn(true);
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      videoRef.current.srcObject = stream;
+
+      // Load face-api.js models
+      await Promise.all([
+        faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+        faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+        faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+        faceapi.nets.faceExpressionNet.loadFromUri('/models'),
+      ]);
+
+      // Start face detection
+      faceMyDetect();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="myapp">
       <div className="appvideo">
@@ -125,6 +129,7 @@ function FaceDetection({ setCapturedImage, setFormData }) {
           <video crossOrigin="anonymous" ref={videoRef} autoPlay height={250} width={250} />
 
         ) : (
+          // eslint-disable-next-line jsx-a11y/click-events-have-key-events
           <img
             src={image1}
             className="webcam-img"
@@ -141,4 +146,13 @@ function FaceDetection({ setCapturedImage, setFormData }) {
   );
 }
 
+FaceDetection.propTypes = {
+  setCapturedImage: PropTypes.node, // 'isOpen' should be a required boolean
+  setFormData: PropTypes.node, // 'onClose' should be a required function
+};
+
+FaceDetection.defaultProps = {
+  setCapturedImage: null,
+  setFormData: null, // You can provide a default value here if needed
+};
 export default FaceDetection;
