@@ -28,6 +28,8 @@ img {
 
 .logo-imge {
   border: none;
+  height: 10%;
+  width: 10%;
 }
 
 .img-btn {
@@ -54,15 +56,17 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .timer-container {
   color: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+
+  /* gap: 2rem; */
 }
 
 .count-down {
@@ -71,15 +75,35 @@ img {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10vh;
+  margin-bottom: 20%;
 }
 
 .days {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   color: blue;
+  padding: 0;
+  margin: 0;
+}
+
+.days h2 {
+  font-size: 22px;
+  padding: 0 10px;
+  margin: 40px 0 0 0;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  font-size: 5vw;
+  height: 13vh;
+  color: blue;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-gallery {
@@ -107,23 +131,22 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
 }
 
 .time-remain {
-  margin-left: 3vw;
-  border: 2px solid blue;
-  font-size: 2vw;
+  font-size: 48px;
   font-weight: bold;
   color: blue;
-  padding: 1.5vh 1vw;
+  padding: 0;
   text-align: center;
-  border-radius: 5px;
 }
 
 .timer-name {
   color: rgb(32, 32, 218);
-  font-size: 48px;
+  font-size: 20px;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-decoration: underline;
 }
 
 .share-links {
@@ -136,12 +159,37 @@ img {
   margin-top: 2rem;
 }
 
+.live-budget {
+  color: blue;
+  text-align: center;
+  margin-top: 15vh;
+}
+
+.para {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.para p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: blue;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 10vh 10px;
+}
+
 .contact-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10vh 5vw 5vw 10vh;
+  margin: 17vh 5vw 5vw 10vh;
 }
 
 .contact-form {
@@ -175,7 +223,7 @@ img {
   border: none;
   border-radius: 2rem;
   color: white;
-  background-color: rgb(65, 65, 173);
+  background-color: blue;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -185,9 +233,11 @@ img {
 }
 
 .contact-icon {
+  margin-top: 10%;
   color: rgb(32, 32, 218);
-  font-size: 48px;
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 700;
+  text-decoration: underline;
   margin-bottom: 1rem;
 }
 
@@ -203,6 +253,8 @@ img {
   width: 90%;
   padding: 2vh 1vw;
   border-radius: 1rem;
+  background-color: #1329f0;
+  color: white;
 }
 
 .cross-button {
@@ -236,13 +288,24 @@ img {
   align-items: center;
 }
 
+.involvement {
+  margin-left: 20vw;
+  color: gainsboro;
+}
+
 .button-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   padding-bottom: 2vh;
-  margin-left: 30vw;
+  margin-left: 20vw;
+  margin-bottom: 10vh;
+}
+
+.button-container h2 {
+  color: white;
+  font-weight: 200;
 }
 
 .buttons-link {
@@ -272,6 +335,7 @@ img {
   font-weight: bold;
   border: none;
   text-decoration: underline;
+  text-align: center;
   padding-left: 0;
   padding-right: 0;
   justify-content: center;
@@ -285,7 +349,10 @@ img {
 .button-names img {
   height: 8vh;
   width: 5vw;
-  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1vh;
   background: inherit;
   opacity: 1;
   border: none;
@@ -353,6 +420,9 @@ img {
 .share-social-icone {
   height: 4.1rem;
   width: 8vw;
+  border: none;
+  padding: 10px;
+  background-color: white;
 }
 
 .close-icon {
@@ -418,8 +488,8 @@ img {
 }
 
 input {
-  background-color: black;
-  color: blue;
+  color: white;
+  background-color: blue;
 }
 
 .input-container input {
@@ -451,16 +521,18 @@ input {
 
 .colon {
   display: flex;
-  justify-content: space-between;
-  line-height: 5vh;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
 }
 
 .colon .span-colon {
-  padding: 1vh 1.5vw;
-  font-size: 2vw;
+  /* padding: 1vh 1.5vw; */
+  font-size: 40px;
   font-weight: bold;
   display: flex;
-  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 .diff-container {
@@ -540,13 +612,14 @@ input {
   }
 
   .timer-name {
-    font-size: 1.6rem;
+    font-size: 15px;
+    text-decoration: underline;
     color: rgb(32, 32, 218);
   }
 
-  .timer-container {
+  /* .timer-container {
     gap: 10px;
-  }
+  } */
 
   h2 {
     font-size: large;
@@ -554,7 +627,10 @@ input {
   }
 
   .time-remain {
-    margin-left: 6px;
+    /* margin-left: 6px; */
+    font-size: 48px;
+    padding: 0;
+    margin: 0;
   }
 
   .contact-popup {

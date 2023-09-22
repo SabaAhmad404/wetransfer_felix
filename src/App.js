@@ -8,6 +8,7 @@ import FaceDetection from './components/facedetection/FaceDetection';
 
 function App() {
   return (
+
     <div className="App">
 
       <Routes>
