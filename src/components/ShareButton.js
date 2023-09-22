@@ -7,7 +7,7 @@ import youtube1 from './images/youtube1.png';
 import kakao from './images/kakao.png';
 import blogger from './images/blogger.png';
 import TITOK from './images/TITOK.png';
-import white from './images/white.png';
+import white from './images/shareicon.jpeg';
 
 export default function ShareButton() {
   const shareUrl = 'https://yaavaay.onrender.com/';
