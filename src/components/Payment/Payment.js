@@ -2,7 +2,8 @@ import React from 'react';
 
 function Payment() {
   return (
-    <h1>Payment Page</h1>
+    <h1>Register successfully</h1>
+
   );
 }
 
