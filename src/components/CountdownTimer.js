@@ -52,42 +52,32 @@ function CountdownTimer() {
 
   return (
     <div className="count-down">
-      <h1 className="timer-name">Countdown Timer</h1>
+      <h6 className="timer-name">THE FIRST GLOBAL PUBLIC INTERGALATIC HANDSHAKE</h6>
       <div className="timer-container">
         <div className="days">
-          <h2>Days</h2>
-          <div className="colon">
-            <span className="time-remain">{addLeadingZero(timeRemaining.days)}</span>
-            <span className="span-colon">:</span>
-          </div>
+          <h2>DAYS</h2>
+          <h2>HOURS</h2>
+          <h2>MINUTES</h2>
+          <h2>SECONDS </h2>
         </div>
-        <div className="days">
-          <h2>Hours</h2>
-          <div className="colon">
-            <span className="time-remain">
-              {addLeadingZero(timeRemaining.hours)}
-            </span>
-            <span className="span-colon">:</span>
-          </div>
-        </div>
-        <div className="days">
-          <h2>Minutes</h2>
-          <div className="colon">
-            <span className="time-remain">{addLeadingZero(timeRemaining.minutes)}</span>
-            <span className="span-colon">:</span>
-          </div>
-        </div>
-        <div className="days">
-          <h2>Seconds </h2>
-          <div className="colon">
-            {' '}
-            <span className="time-remain">
-              {addLeadingZero(timeRemaining.seconds)}
-              {' '}
-            </span>
-          </div>
 
-        </div>
+        <ul>
+          <li>
+            {addLeadingZero(timeRemaining.days)}
+          </li>
+          <li>:</li>
+          <li>
+            {addLeadingZero(timeRemaining.hours)}
+          </li>
+          <li>:</li>
+          <li>
+            {addLeadingZero(timeRemaining.minutes)}
+          </li>
+          <li>:</li>
+          <li>
+            {addLeadingZero(timeRemaining.seconds)}
+          </li>
+        </ul>
       </div>
     </div>
   );
