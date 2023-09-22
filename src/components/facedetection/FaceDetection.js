@@ -1,41 +1,45 @@
-import { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './detect.css';
 import * as faceapi from 'face-api.js';
+import image1 from '../images/user.png';
 
-function FaceDetection() {
+function FaceDetection({ setCapturedImage, setFormData }) {
   const videoRef = useRef();
   const canvasRef = useRef();
-  const [capturedImage, setCapturedImage] = useState(null);
   const [isCaptured, setIsCaptured] = useState(false); // Add a state variable
   const [faceDetected, setFaceDetected] = useState(false); // Add a state variable to track face detection
-  /* eslint-disable */
-  // LOAD FROM USEEFFECT
-  useEffect(() => {
-    startVideo();
-    videoRef && loadModels();
-  }, []);
+  const [isVideoOn, setIsVideoOn] = useState(false);
 
-  // OPEN YOUR FACE WEBCAM
-  const startVideo = () => {
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then((currentStream) => {
-        videoRef.current.srcObject = currentStream;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const startVideoAndDetect = async () => {
+    setIsVideoOn(true);
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      videoRef.current.srcObject = stream;
+
+      // Load face-api.js models
+      await Promise.all([
+        faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+        faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+        faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+        faceapi.nets.faceExpressionNet.loadFromUri('/models'),
+      ]);
+
+      // Start face detection
+      faceMyDetect();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  // LOAD MODELS FROM FACE API
-  const loadModels = async () => {
-    await Promise.all([
-      // THIS FOR FACE DETECT AND LOAD FROM YOUR PUBLIC/MODELS DIRECTORY
-      faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-      faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-      faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-      faceapi.nets.faceExpressionNet.loadFromUri('/models'),
-    ]);
-    faceMyDetect();
+  const stopVideo = () => {
+    const stream = videoRef.current.srcObject;
+    if (stream) {
+      const tracks = stream.getTracks();
+      tracks.forEach((track) => {
+        track.stop(); // Stop each track in the stream
+      });
+      videoRef.current.srcObject = null; // Release the video element's reference to the stream
+    }
   };
 
   // Capture an image
@@ -57,11 +61,15 @@ function FaceDetection() {
       const imageSrc = URL.createObjectURL(blob);
       setCapturedImage(imageSrc); // Set the captured image URL
       setIsCaptured(true); // Set isCaptured to true
+      const key = 'image';
+      setFormData({
+        [key]: imageSrc,
+      });
 
       // Clear the canvas to remove the face detection mask
       const canvasContext = canvasRef.current.getContext('2d');
       canvasContext.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-
+      stopVideo();
       // Reset faceDetected after a successful capture
       setFaceDetected(false);
     }, 'image/jpeg');
@@ -82,8 +90,8 @@ function FaceDetection() {
         canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
 
         faceapi.matchDimensions(canvasElement, {
-          width: 940,
-          height: 650,
+          width: 150,
+          height: 150,
         });
 
         const resizedDetections = faceapi.resizeResults(detections, {
@@ -104,7 +112,7 @@ function FaceDetection() {
           setFaceDetected(true);
           setTimeout(() => {
             captureImage();
-          }, 3000); // 3000 milliseconds (3 seconds)
+          }, 2000); // 3000 milliseconds (3 seconds)
         }
       }
     }, 1000);
@@ -112,15 +120,23 @@ function FaceDetection() {
 
   return (
     <div className="myapp">
-      <h1>Face Detection</h1>
-      {isCaptured ? (
-        <img className="capturing" src={capturedImage} alt="Captured" />
-      ) : (
-        <div className="appvideo">
-          <video crossOrigin="anonymous" ref={videoRef} autoPlay />
-        </div>
-      )}
-      <canvas ref={canvasRef} width="940" height="650" className="appcanvas" />
+      <div className="appvideo">
+        {isVideoOn ? (
+          <video crossOrigin="anonymous" ref={videoRef} autoPlay height={250} width={250} />
+
+        ) : (
+          <img
+            src={image1}
+            className="webcam-img"
+            alt="Captured"
+            onClick={startVideoAndDetect} // Clicking the image turns on the camera.
+            style={{ cursor: 'pointer' }}
+          />
+        )}
+
+      </div>
+
+      {isVideoOn && <canvas ref={canvasRef} width="200" height="200" className="appcanvas" />}
     </div>
   );
 }

@@ -1,6 +1,9 @@
-.appvide {
+.appvideo {
   display: flex;
+  justify-content: center;
   align-items: center;
+  width: 200px;
+  height: 200px;
 }
 
 .appcanvas {
@@ -8,16 +11,28 @@
   top: 40px;
 }
 
+.disabled-canvas {
+  pointer-events: none; /* Disable pointer events on the canvas */
+  opacity: 0.7; /* Optionally reduce opacity to indicate that it's disabled */
+}
+
 .myapp {
   display: flex;
-  width: 100vw;
-  height: 100vh;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
+.myapp img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  border: none;
+}
+
 .capturing {
-  height: 550px;
-  width: 600px;
+  width: 250px;
+  height: 250px;
 }
